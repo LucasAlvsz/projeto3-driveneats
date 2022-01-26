@@ -1,0 +1,149 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+    ;
+
+}
+
+/* fontes
+font-family: 'Roboto', sans-serif;
+font-family: 'Righteous', cursive; */
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #CF2B2B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.titulo-header {
+    font-family: 'Righteous', cursive;
+    color: #FFFFFF;
+    font-size: 44px;
+    line-height: 55px;
+    font-weight: 400;
+    position: absolute;
+    left: 21px;
+    top: 8px;
+}
+
+.subtitulo-header {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 21px;
+    position: absolute;
+    left: 21px;
+    top: 57px;
+
+}
+
+.feed {
+    width: 100%;
+    height: calc(100vh - 184px);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-left: 19px;
+    margin-top: 92px;
+    margin-bottom: 92px;
+
+}
+
+section {
+    margin-top: 27px;
+}
+
+.titulo-options {
+    font-family: 'Righteous', cursive;
+    font-size: 26px;
+    line-height: 32px;
+    color: #333333;
+}
+
+.options {
+    width: 414px;
+    display: flex;
+    overflow-x: scroll;
+    padding-right: 19px;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    margin-top: 17px;
+}
+
+.option {
+    background-color: #FFFFFF;
+    width: 172px;
+    height: 216px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 9px;
+    /* superior | horizontal | inferior */
+    padding: 18px 14px 13px;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    margin-right: 16px;
+}
+
+.option img {
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+}
+
+.nome-option {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    color: #333333;
+}
+
+.acompanhamentos-option {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 300;
+    color: #A6A6A6;
+}
+
+.valor-option {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.bottom-bar {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-bar button {
+    display: flex;
+    background-color: #CBCBCB;
+    width: 344px;
+    height: 61px;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 400;
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 8px 60px;
+}
+
+.margin {
+    margin-bottom: 16px;
+}
