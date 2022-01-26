@@ -70,28 +70,33 @@ section {
 }
 
 .options {
-    width: 414px;
+    width: auto;
     display: flex;
     overflow-x: scroll;
-    padding-right: 19px;
-    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
     margin-top: 17px;
 }
 
 .option {
-    background-color: #FFFFFF;
     width: 172px;
     height: 216px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
     border-radius: 9px;
     /* superior | horizontal | inferior */
     padding: 18px 14px 13px;
-    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0 0 0 5px #E5E5E5;
     margin-right: 16px;
 }
-
+.selecionado{
+    display: none;
+    font-size: 20px;
+    color: #32B72F;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
 .option img {
     width: 144px;
     height: 87px;

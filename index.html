@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://images.emojiterra.com/google/android-11/512px/1f354.png" type="image/png" />
     <title>DrivenEats</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -31,8 +32,11 @@
                 <h1>Primeiro, seu prato</h1>
             </div>
             <div class="options">
-                <div class="option">
+                <div id="Frango" class="option" onclick="selecionarFrango()">
                     <img src="imagens/frango_yin.png" alt="frango yin yang">
+                    <div id="Frango-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
                         <p>Frango Yin Yang</p>
                     </div>
@@ -43,25 +47,31 @@
                         <p>R$ 14,90</p>
                     </div>
                 </div>
-                <div class="option">
-                    <img src="imagens/frango_yin.png" alt="frango yin yang">
+                <div id="Vegano" class="option" onclick="selecionarVegano()">
+                    <img src="imagens/frango_vegano.jpg" alt="frango vegano">
+                    <div id="Vegano-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
-                        <p>Frango Yin Yang</p>
+                        <p>Frango Vegano</p>
                     </div>
                     <div class="acompanhamentos-option">
-                        <p>Um pouco de batata, um pouco de salada</p>
+                        <p>Tomates e pimenta</p>
                     </div>
                     <div class="valor-option">
-                        <p>R$ 14,90</p>
+                        <p>R$ 15,90</p>
                     </div>
                 </div>
-                <div class="option">
-                    <img src="imagens/frango_yin.png" alt="frango yin yang">
+                <div id="XDriven" class="option" onclick="selecionarXDriven()">
+                    <img src="imagens/hamburguer.jpg" alt="Hamburguer">
+                    <div id="XDriven-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
-                        <p>Frango Yin Yang</p>
+                        <p>XDriven</p>
                     </div>
                     <div class="acompanhamentos-option">
-                        <p>Um pouco de batata, um pouco de salada</p>
+                        <p>Tomate, cheddar e molho especial Dev</p>
                     </div>
                     <div class="valor-option">
                         <p>R$ 14,90</p>
@@ -75,8 +85,11 @@
                 <h1>Agora, sua bebida</h1>
             </div>
             <div class="options">
-                <div class="option">
+                <div id="Coca" class="option" onclick="selecionarCoca()">
                     <img src="imagens/coquinha_gelada.png" alt="coquinha gelada">
+                    <div id="Coca-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
                         <p>Coquinha gelada</p>
                     </div>
@@ -87,28 +100,34 @@
                         <p>R$ 4,90</p>
                     </div>
                 </div>
-                <div class="option">
-                    <img src="imagens/coquinha_gelada.png" alt="coquinha gelada">
+                <div id="Suco" class="option" onclick="selecionarSuco()">
+                    <img src="imagens/suco.jpg" alt="suco de pera">
+                    <div id="Suco-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
-                        <p>Coquinha gelada</p>
+                        <p>Suco de Pera</p>
                     </div>
                     <div class="acompanhamentos-option">
-                        <p>Lata 350ml</p>
+                        <p>Copo 350ml</p>
                     </div>
                     <div class="valor-option">
-                        <p>R$ 4,90</p>
+                        <p>R$ 5,90</p>
                     </div>
                 </div>
-                <div class="option">
-                    <img src="imagens/coquinha_gelada.png" alt="coquinha gelada">
+                <div id="Cha" class="option" onclick="selecionarCha()">
+                    <img src="imagens/cha.jpg" alt="cha matte">
+                    <div id="Cha-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
-                        <p>Coquinha gelada</p>
+                        <p>Chá Matte</p>
                     </div>
                     <div class="acompanhamentos-option">
-                        <p>Lata 350ml</p>
+                        <p>Garrafa 450ml</p>
                     </div>
                     <div class="valor-option">
-                        <p>R$ 4,90</p>
+                        <p>R$ 9,90</p>
                     </div>
                 </div>
             </div>
@@ -116,10 +135,13 @@
         <!-- Sobremesas -->
         <section>
             <div class="titulo-options">
-                <h1>Primeiro, seu prato</h1>
+                <h1>Por fim, sua sobremesa</h1>
             </div>
             <div class="options">
-                <div class="option">
+                <div id="Pudim" class="option" onclick="selecionarPudim()">
+                    <div id="Pudim-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <img src="imagens/pudim.png" alt="pudim">
                     <div class="nome-option">
                         <p>Pudim</p>
@@ -131,28 +153,34 @@
                         <p>R$ 7,90</p>
                     </div>
                 </div>
-                <div class="option">
-                    <img src="imagens/pudim.png" alt="pudim">
+                <div id="Sorvete" class="option" onclick="selecionarSorvete()">
+                    <img src="imagens/sorvete.jpg" alt="sorvete vegano">
+                    <div id="Sorvete-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
-                        <p>Pudim</p>
+                        <p>Sorvete Vegano</p>
                     </div>
                     <div class="acompanhamentos-option">
-                        <p>Pudim apenas</p>
+                        <p>Sabor Chocolate, Pote 400g</p>
                     </div>
                     <div class="valor-option">
-                        <p>R$ 7,90</p>
+                        <p>R$ 10,90</p>
                     </div>
                 </div>
-                <div class="option">
-                    <img src="imagens/pudim.png" alt="pudim">
+                <div id="SaladaFrutas" class="option" onclick="selecionarSaladaFrutas()">
+                    <img src="imagens/salada_frutas.jpg" alt="salada de frutas" onclick="selecionarSaladaFrutas">
+                    <div id="SaladaFrutas-select" class="selecionado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                     <div class="nome-option">
-                        <p>Pudim</p>
+                        <p>Salada de Frutas</p>
                     </div>
                     <div class="acompanhamentos-option">
-                        <p>Pudim apenas</p>
+                        <p>Tigela 300ml</p>
                     </div>
                     <div class="valor-option">
-                        <p>R$ 7,90</p>
+                        <p>R$ 5,99</p>
                     </div>
                 </div>
             </div>
@@ -165,6 +193,9 @@
             <p>Selecione os 3 itens para fechar o pedido</p>
         </button>
     </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="scripit.js"></script>
+
 </body>
 
 </html>
