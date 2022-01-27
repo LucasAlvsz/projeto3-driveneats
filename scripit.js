@@ -2,14 +2,20 @@
 let prato_selecionado;
 let bebida_selecionado;
 let sobremesa_selecionado;
+let pratoPreco;
+let bebidaPreco;
+let sobremesaPreco;
+let precoTotal
 let mensagem_wpp;
-let count = 0;
 
-function validaBotao(){
+
+function validaBotao() {
     if (prato_selecionado != undefined && bebida_selecionado != undefined && sobremesa_selecionado != undefined) {
         document.getElementById("botao-finalizar").style.backgroundColor = "#32B72F"
         document.getElementById("desabilitado").style.display = "none";
         document.getElementById("habilitado").style.display = "block";
+        precoTotal = parseFloat(pratoPreco) + parseFloat(bebidaPreco) + parseFloat(sobremesaPreco);
+        precoTotal = precoTotal.toFixed(2)
     }
 }
 
@@ -26,8 +32,9 @@ function selecionarFrango() {
     document.getElementById("XDriven-select").style.display = "none";
     // Armazenar item selecionado
     prato_selecionado = "Frango Yin Yang";
+    pratoPreco = 14.90;
     // Função que valida se os tres itens foram selecionados
-    validaBotao()
+    validaBotao();
     // Deselecionar
 
 }
@@ -44,8 +51,9 @@ function selecionarVegano() {
     document.getElementById("XDriven-select").style.display = "none";
     // Armazenar item selecionado
     prato_selecionado = "Frango Vegano";
-    validaBotao()
-    
+    pratoPreco = 15.90;
+    validaBotao();
+
 }
 
 function selecionarXDriven() {
@@ -60,7 +68,8 @@ function selecionarXDriven() {
     document.getElementById("Vegano-select").style.display = "none";
     // Armazenar item selecionado
     prato_selecionado = "XDriven";
-    validaBotao()
+    pratoPreco = 14.90;
+    validaBotao();
 }
 
 // Bebidas
@@ -75,8 +84,9 @@ function selecionarCoca() {
     document.getElementById("Cha").style.boxShadow = "inset 0 0 0 5px #FFFFFF";
     document.getElementById("Cha-select").style.display = "none";
     // Armazenar item selecionado
-    bebida_selecionado = "Coquinha gelada"
-    validaBotao()
+    bebida_selecionado = "Coquinha gelada";
+    bebidaPreco = 4.90;
+    validaBotao();
 
 }
 
@@ -91,9 +101,9 @@ function selecionarSuco() {
     document.getElementById("Cha").style.boxShadow = "inset 0 0 0 5px #FFFFFF";
     document.getElementById("Cha-select").style.display = "none";
     // Armazenar item selecionado
-    bebida_selecionado = "Suco de pera"
-    validaBotao()
-    count += 1;
+    bebida_selecionado = "Suco de pera";
+    bebidaPreco = 4.90;
+    validaBotao();
 
 }
 
@@ -108,8 +118,9 @@ function selecionarCha() {
     document.getElementById("Coca").style.boxShadow = "inset 0 0 0 5px #FFFFFF";
     document.getElementById("Coca-select").style.display = "none";
     // Armazenar item selecionado
-    bebida_selecionado = "Chá Matte"
-    validaBotao()
+    bebida_selecionado = "Chá Matte";
+    bebidaPreco = 9.90;
+    validaBotao();
 
 }
 
@@ -125,8 +136,9 @@ function selecionarPudim() {
     document.getElementById("SaladaFrutas").style.boxShadow = "inset 0 0 0 5px #FFFFFF";
     document.getElementById("SaladaFrutas-select").style.display = "none";
     // Armazenar item selecionado
-    sobremesa_selecionado = "Pudim"
-    validaBotao()
+    sobremesa_selecionado = "Pudim";
+    sobremesaPreco = 7.90;
+    validaBotao();
 
 }
 
@@ -142,7 +154,8 @@ function selecionarSorvete() {
     document.getElementById("SaladaFrutas-select").style.display = "none";
     // Armazenar item selecionado
     sobremesa_selecionado = "Sorvete vegano"
-    validaBotao()
+    sobremesaPreco = 10.90;
+    validaBotao();
 }
 
 function selecionarSaladaFrutas() {
@@ -158,19 +171,30 @@ function selecionarSaladaFrutas() {
     // Armazenar item selecionado
     sobremesa_selecionado = "Salada de frutas"
     // Validando botão
-    validaBotao()
-
+    sobremesaPreco = 5.99;
+    validaBotao();
 }
 // Finalizar pedido
-function revisarDados(){
-    document.getElementById("revisaoDados").style.display = "flex";
+function revisarDados() {
+    // Combo
+    document.getElementById("prato-nome").textContent = prato_selecionado;
+    document.getElementById("bebida-nome").textContent = bebida_selecionado;
+    document.getElementById("sobremesa-nome").textContent = sobremesa_selecionado;
+    // Preços
+    document.getElementById("prato-preco").textContent = pratoPreco.toFixed(2);
+    document.getElementById("bebida-preco").textContent = bebidaPreco.toFixed(2);
+    document.getElementById("sobremesa-preco").textContent = sobremesaPreco.toFixed(2);
+    // Total
+    document.getElementById("preco-total").textContent = "R$ " + precoTotal;
+    // Revisar pedido
+    document.getElementById("revisaoDados").style.display = "flex"
+
 }
 function finalizarPedido() {
-        mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado;
-        alert(mensagem_wpp)
-        window.open("https://wa.me/5561900000000?text=" + encodeURIComponent(mensagem_wpp))
+    mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado + "\n" + "Total: R$: " + precoTotal;
+    window.open("https://wa.me/5561999009900?text=" + encodeURIComponent(mensagem_wpp))
 }
-function cancelarPedido(){
+function cancelarPedido() {
     document.getElementById("revisaoDados").style.display = "none";
 }
 

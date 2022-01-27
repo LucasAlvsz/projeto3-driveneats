@@ -209,25 +209,41 @@
             </div>
             <div class="pedidos-pop-up">
                 <div class="nomes-pedidos">
-                    <div class="nome-pedido"><p>Frango Yin Yang </p></div>
-                    <div class="nome-pedido"><p>Coquinha gelada</p></div>
-                    <div class="nome-pedido"><p>Pudim </p></div> 
+                    <div id="prato-nome" class="nome-pedido">
+                        <p></p>
+                    </div>
+                    <div id="bebida-nome" class="nome-pedido">
+                        <p></p>
+                    </div>
+                    <div id="sobremesa-nome" class="nome-pedido">
+                        <p></p>
+                    </div>
                 </div>
                 <div class="preco-pedidos">
-                    <div class="preco-pedido"><p>14,90</p></div>
-                    <div class="preco-pedido"><p>4,90</p></div>
-                    <div class="preco-pedido"><p>7,90</p></div>
+                    <div id="prato-preco" class="preco-pedido">
+                        <p></p>
+                    </div>
+                    <div id="bebida-preco" class="preco-pedido">
+                        <p></p>
+                    </div>
+                    <div id="sobremesa-preco" class="preco-pedido">
+                        <p></p>
+                    </div>
                 </div>
             </div>
             <div class="total-pedidos">
-                <div><p>Total</p></div>
-                <div class="preco-total">
-                    <p>R$ 27,70</p>
+                <div>
+                    <p>Total</p>
+                </div>
+                <div id="preco-total" class="preco-total">
+                    <p></p>
                 </div>
             </div>
-            <button id="botaoConfirmarPedido" class="confirmar" onclick="finalizarPedido()"><p>Tudo certo, pode pedir!</p></button>
-            <div id="botaoCancelarPedido" class="cancelar" onclick="cancelarPedido()"><button >Cancelar</button></div>
-            
+            <button id="botaoConfirmarPedido" class="confirmar" onclick="finalizarPedido()">
+                <p>Tudo certo, pode pedir!</p>
+            </button>
+            <div id="botaoCancelarPedido" class="cancelar" onclick="cancelarPedido()"><button>Cancelar</button></div>
+
         </div>
     </div>
 </body>
