@@ -168,7 +168,7 @@ function revisarDados(){
 function finalizarPedido() {
         mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado;
         alert(mensagem_wpp)
-        window.open("https://wa.me/5561993509462?text=" + encodeURIComponent(mensagem_wpp))
+        window.open("https://wa.me/5561900000000?text=" + encodeURIComponent(mensagem_wpp))
 }
 function cancelarPedido(){
     document.getElementById("revisaoDados").style.display = "none";
