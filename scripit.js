@@ -2,7 +2,15 @@
 let prato_selecionado;
 let bebida_selecionado;
 let sobremesa_selecionado;
+let mensagem_wpp;
 
+function validaBotao(){
+    if (prato_selecionado != undefined && bebida_selecionado != undefined && sobremesa_selecionado != undefined) {
+        document.getElementById("botao-finalizar").style.backgroundColor = "#32B72F"
+        document.getElementById("desabilitado").style.display = "none";
+        document.getElementById("habilitado").style.display = "block";
+    }
+}
 // Pratos
 function selecionarFrango() {
     // Seleção itens
@@ -16,6 +24,7 @@ function selecionarFrango() {
     document.getElementById("XDriven-select").style.display = "none";
     // Armazenar item selecionado
     prato_selecionado = "Frango Yin Yang";
+    validaBotao()
 }
 
 function selecionarVegano() {
@@ -30,24 +39,26 @@ function selecionarVegano() {
     document.getElementById("XDriven-select").style.display = "none";
     // Armazenar item selecionado
     prato_selecionado = "Frango Vegano";
+    validaBotao()
 }
 
 function selecionarXDriven() {
-        // Seleção itens
-        document.getElementById("XDriven").style.boxShadow = "inset 0 0 0 5px #32B72F";
-        document.getElementById("XDriven-select").style.display = "block";
-        //Deselecionar outro item
-        document.getElementById("Frango").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
-        document.getElementById("Frango-select").style.display = "none";
-        //Deselecionar outro item
-        document.getElementById("Vegano").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
-        document.getElementById("Vegano-select").style.display = "none";
-        // Armazenar item selecionado
-        prato_selecionado = "XDriven";
+    // Seleção itens
+    document.getElementById("XDriven").style.boxShadow = "inset 0 0 0 5px #32B72F";
+    document.getElementById("XDriven-select").style.display = "block";
+    //Deselecionar outro item
+    document.getElementById("Frango").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
+    document.getElementById("Frango-select").style.display = "none";
+    //Deselecionar outro item
+    document.getElementById("Vegano").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
+    document.getElementById("Vegano-select").style.display = "none";
+    // Armazenar item selecionado
+    prato_selecionado = "XDriven";
+    validaBotao()
 }
 
 // Bebidas
-function selecionarCoca(){
+function selecionarCoca() {
     // Seleção itens
     document.getElementById("Coca").style.boxShadow = "inset 0 0 0 5px #32B72F";
     document.getElementById("Coca-select").style.display = "block";
@@ -57,9 +68,12 @@ function selecionarCoca(){
     //Deselecionar outro item
     document.getElementById("Cha").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
     document.getElementById("Cha-select").style.display = "none";
+    // Armazenar item selecionado
+    bebida_selecionado = "Coquinha gelada"
+    validaBotao()
 }
 
-function selecionarSuco(){
+function selecionarSuco() {
     // Seleção itens
     document.getElementById("Suco").style.boxShadow = "inset 0 0 0 5px #32B72F";
     document.getElementById("Suco-select").style.display = "block";
@@ -69,6 +83,9 @@ function selecionarSuco(){
     //Deselecionar outro item
     document.getElementById("Cha").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
     document.getElementById("Cha-select").style.display = "none";
+    // Armazenar item selecionado
+    bebida_selecionado = "Suco de pera"
+    validaBotao()
 }
 
 function selecionarCha() {
@@ -81,6 +98,9 @@ function selecionarCha() {
     //Deselecionar outro item
     document.getElementById("Coca").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
     document.getElementById("Coca-select").style.display = "none";
+    // Armazenar item selecionado
+    bebida_selecionado = "Chá Matte"
+    validaBotao()
 }
 
 // Sobremesas
@@ -94,6 +114,9 @@ function selecionarPudim() {
     //Deselecionar outro item
     document.getElementById("SaladaFrutas").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
     document.getElementById("SaladaFrutas-select").style.display = "none";
+    // Armazenar item selecionado
+    sobremesa_selecionado = "Pudim"
+    validaBotao()
 }
 
 function selecionarSorvete() {
@@ -106,6 +129,9 @@ function selecionarSorvete() {
     //Deselecionar outro item
     document.getElementById("SaladaFrutas").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
     document.getElementById("SaladaFrutas-select").style.display = "none";
+    // Armazenar item selecionado
+    sobremesa_selecionado = "Sorvete vegano"
+    validaBotao()
 }
 
 function selecionarSaladaFrutas() {
@@ -118,12 +144,16 @@ function selecionarSaladaFrutas() {
     //Deselecionar outro item
     document.getElementById("Pudim").style.boxShadow = "inset 0 0 0 5px #E5E5E5";
     document.getElementById("Pudim-select").style.display = "none";
-
+    // Armazenar item selecionado
+    sobremesa_selecionado = "Salada de frutas"
+    // Validando botão
+    validaBotao()
 }
 // Finalizar pedido
 function finalizarPedido() {
-    
-    // abrir nova janela window.open("link"+mensagem)
+        mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado;
+        alert(mensagem_wpp)
+        window.open("https://wa.me/5561993599499?text=" + mensagem_wpp)
 }
 
 
