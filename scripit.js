@@ -104,7 +104,7 @@ function selecionarSuco() {
     document.getElementById("Cha-select").style.display = "none";
     // Armazenar item selecionado
     bebida_selecionado = "Suco de pera";
-    bebidaPreco = 4.90;
+    bebidaPreco = 5.90;
     validaBotao();
 
 }
