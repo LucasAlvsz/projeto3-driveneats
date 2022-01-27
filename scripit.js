@@ -196,7 +196,7 @@ function finalizarPedido() {
     nomeCliente = prompt("Por favor digite o seu Nome: ")
     enderecoCliente = prompt("Por favor digite o seu Endereço: ")
     mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado + "\n" + "Total: R$ " + precoTotal + "\n \n" + "Nome: " + nomeCliente + "\n" + "Enderço: " + enderecoCliente;
-    window.open("https://wa.me/5561993509462?text=" + encodeURIComponent(mensagem_wpp))
+    window.open("https://wa.me/5561999999999?text=" + encodeURIComponent(mensagem_wpp))
 }
 function cancelarPedido() {
     document.getElementById("revisaoDados").style.display = "none";
