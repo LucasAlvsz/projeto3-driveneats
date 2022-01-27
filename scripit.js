@@ -6,6 +6,8 @@ let pratoPreco;
 let bebidaPreco;
 let sobremesaPreco;
 let precoTotal
+let nomeCliente
+let enderecoCliente
 let mensagem_wpp;
 
 
@@ -191,8 +193,10 @@ function revisarDados() {
 
 }
 function finalizarPedido() {
-    mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado + "\n" + "Total: R$: " + precoTotal;
-    window.open("https://wa.me/5561999009900?text=" + encodeURIComponent(mensagem_wpp))
+    nomeCliente = prompt("Por favor digite o seu Nome: ")
+    enderecoCliente = prompt("Por favor digite o seu Endereço: ")
+    mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado + "\n" + "Total: R$ " + precoTotal + "\n \n" + "Nome: " + nomeCliente + "\n" + "Enderço: " + enderecoCliente;
+    window.open("https://wa.me/5561993509462?text=" + encodeURIComponent(mensagem_wpp))
 }
 function cancelarPedido() {
     document.getElementById("revisaoDados").style.display = "none";
