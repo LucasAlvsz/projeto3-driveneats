@@ -184,6 +184,9 @@ function selecionarSaladaFrutas() {
 }
 // Finalizar pedido
 function revisarDados() {
+    // Pedindo Nome e Endereço do cliente
+    nomeCliente = prompt("Por favor digite o seu Nome: ")
+    enderecoCliente = prompt("Por favor digite o seu Endereço: ")
     // Combo
     document.getElementById("prato-nome").textContent = prato_selecionado;
     document.getElementById("bebida-nome").textContent = bebida_selecionado;
@@ -199,12 +202,13 @@ function revisarDados() {
 
 }
 function finalizarPedido() {
-    nomeCliente = prompt("Por favor digite o seu Nome: ")
-    enderecoCliente = prompt("Por favor digite o seu Endereço: ")
+    // Montando mensgem a ser mandada para o whatsapp do restaurante
     mensagem_wpp = "Olá, gostaria de fazer o pedido:" + "\n" + " - Prato: " + prato_selecionado + "\n" + " - Bebida: " + bebida_selecionado + "\n" + " - Sobremesa: " + sobremesa_selecionado + "\n" + "Total: R$ " + precoTotal + "\n \n" + "Nome: " + nomeCliente + "\n" + "Enderço: " + enderecoCliente;
     window.open("https://wa.me/5561999999999?text=" + encodeURIComponent(mensagem_wpp))
+    // Recarregando a página para que possa ser feito um novo pedido
     location.reload();
 }
+// Cancelando o pedido
 function cancelarPedido() {
     document.getElementById("revisaoDados").style.display = "none";
 }
